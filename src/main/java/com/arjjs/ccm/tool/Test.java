@@ -17,10 +17,7 @@ public class Test {
         long ss = (System.currentTimeMillis() - ll);
 		System.out.println("--end:" + System.currentTimeMillis() + ",take " + ss);
 		System.out.println("123123");
-		System.out.println("456456");
-		System.out.println("789789");
-		System.out.println("测试提交git2020");
-		System.out.println("测试提交git2020结束");
+
 	}
 	//图片反色
     public static BufferedImage img_inverse(BufferedImage imgsrc) {
