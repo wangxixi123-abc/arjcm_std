@@ -16,6 +16,8 @@ public class Test {
         img2file(bii,"png","D:\\22.png");  //生成图片
         long ss = (System.currentTimeMillis() - ll);
 		System.out.println("--end:" + System.currentTimeMillis() + ",take " + ss);
+	
+
 	}
 	//图片反色
     public static BufferedImage img_inverse(BufferedImage imgsrc) {
