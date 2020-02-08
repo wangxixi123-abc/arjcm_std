@@ -213,10 +213,29 @@ public class CcmPatrolMissionsController extends BaseController {
 			model.addAttribute("page", page);
 			return "ccm/patrol/ccmPatrolMissionsList";
 		}
-		page.getList().forEach(item->item.setOfficeName(item.getOffice().indexOf(",")!=-1 ?
+	/*	page.getList().forEach(item->item.setOfficeName(item.getOffice().indexOf(",")!=-1 ?
 				idToOfficeName(item.getOffice().split(",")) :
 				item.getOffice().length()>0 ? officeService.get(item.getOffice()).getName() :""
-		));
+		));*/
+		page.getList().forEach(item-> {
+			if(item.getOffice() != null ){
+				String officeName = "";
+				int i = item.getOffice().indexOf(",");
+				if(i != -1 ){
+					String[] split = item.getOffice().split(",");
+					officeName = idToOfficeName(item.getOffice().split(","));
+				}else{
+					int length = item.getOffice().length();
+					if(length> 0 ){
+						Office office = officeService.get(item.getOffice());
+						if (office != null){
+							officeName = office.getName();
+						}
+					}
+				}
+				item.setOfficeName(officeName);
+			}git
+		});
 		model.addAttribute("page", page);
 		return "ccm/patrol/ccmPatrolMissionsList";
 	}
@@ -243,7 +262,6 @@ public class CcmPatrolMissionsController extends BaseController {
 				item.setOfficeName(item.getOffice().indexOf(",") != -1 ? idToOfficeName(item.getOffice().split(",")) : item.getOffice().length() > 0 ? officeService.get(item.getOffice()).getName() : "");
 		));*/
 		page.getList().forEach(item-> {
-
 			if(item.getOffice() != null ){
 				String officeName = "";
 				int i = item.getOffice().indexOf(",");
