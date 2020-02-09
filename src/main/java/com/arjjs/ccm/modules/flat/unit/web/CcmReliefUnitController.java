@@ -94,10 +94,30 @@ public class CcmReliefUnitController extends BaseController {
         if (page==null) {
             return "flat/unit/ccmReliefUnitList";
         }
-        page.getList().forEach(item -> item.setUserName(item.getUser().getId().indexOf(",") != -1 ?
+    /*    page.getList().forEach(item -> item.setUserName(item.getUser().getId().indexOf(",") != -1 ?
                 idToUserName(item.getUser().getId().split(",")) :
                 item.getUser().getId().length() > 0 ? systemService.getUser(item.getUser().getId()).getName() : ""
-        ));
+        ));*/
+
+        page.getList().forEach(item-> {
+            if(item.getUser() != null ){
+                String officeName = "";
+                int i = item.getUser().getId().indexOf(",");
+                if(i != -1 ){
+                    String[] split = item.getUser().getId().split(",");
+                    officeName = idToUserName(item.getUser().getId().split(","));
+                }else{
+                    int length = item.getUser().getId().length();
+                    if(length> 0 ){
+                        Office office = officeService.get(item.getUser().getId());
+                        if (office != null){
+                            officeName = office.getName();
+                        }
+                    }
+                }
+                item.setUserName(officeName);
+            }
+        });
 
         List<CcmReliefUnit> list = page.getList();
         for (CcmReliefUnit reliefUnit : list) {

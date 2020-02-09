@@ -234,7 +234,7 @@ public class CcmPatrolMissionsController extends BaseController {
 					}
 				}
 				item.setOfficeName(officeName);
-			}git
+			}
 		});
 		model.addAttribute("page", page);
 		return "ccm/patrol/ccmPatrolMissionsList";
