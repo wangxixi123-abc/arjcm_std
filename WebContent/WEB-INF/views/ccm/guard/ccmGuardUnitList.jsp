@@ -87,8 +87,8 @@
 					${ccmGuardUnit.remarks}
 				</td>
 				<shiro:hasPermission name="guard:ccmGuardUnit:edit"><td>
-    				<a href="${ctx}/guard/ccmGuardUnit/form?id=${ccmGuardUnit.id}">修改</a>
-					<a href="${ctx}/guard/ccmGuardUnit/delete?id=${ccmGuardUnit.id}" onclick="return confirmx('确认要删除该警卫单位吗？', this.href)">删除</a>
+    				<a href="${ctx}/guard/ccmGuardUnit/form?id=${ccmGuardUnit.id}"><i style="color:#2fa4e7;" class="icon-pencil" title="修改"></i></a>
+					<a href="${ctx}/guard/ccmGuardUnit/delete?id=${ccmGuardUnit.id}" onclick="return confirmx('确认要删除该警卫单位吗？', this.href)"><i style="color:red;" class="icon-trash" title="删除"></i></a>
 				</td></shiro:hasPermission>
 			</tr>
 		</c:forEach>

@@ -137,7 +137,9 @@ function initTable() {
 				width : '8%',
 				title : '操作',
 				templet: function(val){
-					var html='<a href="'+ctx+'/alarm/bphAlarmInfo/form?id='+val.id+'"><i style="color:#2fa4e7;" class="icon-pencil" title="修改"></i></a><a style="padding-left: 13px;" href="'+ctx+'/alarm/bphAlarmInfo/deleteAlarm?id='+val.id+'" onclick="return confirmx(\'确认要删除该实时警情吗？\', this.href)"><i style="color:red;" class="icon-trash" title="删除"></i></a>'
+					var html='<a href="'+ctx+'/alarm/bphAlarmInfo/form?id='+val.id+'"><i style="color:#2fa4e7;" class="icon-pencil" title="修改"></i></a>' +
+						'<a style="padding-left: 13px;" href="'+ctx+'/alarm/bphAlarmInfo/deleteAlarm?id='+val.id+'"' +
+						' onclick="return confirmx(\'确认要删除该实时警情吗？\', this.href)"><i style="color:red;" class="icon-trash" title="删除"></i></a>'
 					return html;
 			      }
 			}] ],

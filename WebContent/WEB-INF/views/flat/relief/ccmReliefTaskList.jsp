@@ -101,9 +101,9 @@
             </td>
             <shiro:hasPermission name="relief:ccmReliefTask:edit">
                 <td>
-                    <a href="${ctx}/relief/ccmReliefTask/form?id=${ccmReliefTask.id}">修改</a>
+                    <a href="${ctx}/relief/ccmReliefTask/form?id=${ccmReliefTask.id}"><i style="color:#2fa4e7;" class="icon-pencil" title="修改"></i></a>
                     <a href="${ctx}/relief/ccmReliefTask/delete?id=${ccmReliefTask.id}"
-                       onclick="return confirmx('确认要删除该备勤任务吗？', this.href)">删除</a>
+                       onclick="return confirmx('确认要删除该备勤任务吗？', this.href)"><i style="color:red;" class="icon-trash" title="删除"></i></a>
                 </td>
             </shiro:hasPermission>
         </tr>

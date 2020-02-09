@@ -103,8 +103,8 @@
 					${ccmPatrolMissions.remarks}
 				</td>
 				<shiro:hasPermission name="patrol:ccmPatrolMissions:edit"><td>
-    				<a href="${ctx}/patrol/ccmPatrolMissions/form?id=${ccmPatrolMissions.id}">修改</a>
-					<a href="${ctx}/patrol/ccmPatrolMissions/delete?id=${ccmPatrolMissions.id}" onclick="return confirmx('确认要删除该巡逻任务吗？', this.href)">删除</a>
+    				<a href="${ctx}/patrol/ccmPatrolMissions/form?id=${ccmPatrolMissions.id}"><i style="color:#2fa4e7;" class="icon-pencil" title="修改"></i></a>
+					<a href="${ctx}/patrol/ccmPatrolMissions/delete?id=${ccmPatrolMissions.id}" onclick="return confirmx('确认要删除该巡逻任务吗？', this.href)"><i style="color:red;" class="icon-trash" title="删除"></i></a>
 				</td></shiro:hasPermission>
 			</tr>
 		</c:forEach>
