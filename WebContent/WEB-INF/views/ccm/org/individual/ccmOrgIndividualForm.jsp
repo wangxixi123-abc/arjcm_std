@@ -310,7 +310,7 @@
 					<div>
 						<label class="control-label"><span class="help-inline"><font color="red">*</font></span>中共党员数量：</label>
 						<div class="controls">
-							<form:input path="partyMem" htmlEscape="false" maxlength="6" class="input-xlarge number digits "/>
+							<form:input path="partyMem" htmlEscape="false" maxlength="6" class="input-xlarge number digits required "/>
 						</div>
 					</div>
 				</td>
