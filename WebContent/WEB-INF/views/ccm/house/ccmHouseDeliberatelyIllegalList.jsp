@@ -98,7 +98,7 @@
 				</form:select></li>
 		</ul>
 
-	<sys:message content="${message}" />
+
 	<div class="clearfix pull-right btn-box">
 
 			<!-- <input id="btnSubmit" class="btn btn-primary"
@@ -120,6 +120,7 @@
 			</shiro:hasPermission>
 	</div>
 	</form:form>
+	<sys:message content="${message}" />
 	<table id="contentTable" class="table table-striped table-bordered table-condensed table-gradient">
 		<thead>
 			<tr>

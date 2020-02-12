@@ -70,39 +70,39 @@
 		<input id="pageNo" name="pageNo" type="hidden" value="${page.pageNo}"/>
 		<input id="pageSize" name="pageSize" type="hidden" value="${page.pageSize}"/>
 		<ul class="ul-form pull-left">
-			<li><label>名称：</label>
+			<li class="first-line"><label>名称：</label>
 				<form:input path="compName" htmlEscape="false" maxlength="100" class="input-medium"/>
 			</li>
-			<li><label>工商执照注册号：</label>
+			<li class="first-line"><label>工商执照注册号：</label>
 				<form:input path="compId" htmlEscape="false" maxlength="100" class="input-medium"/>
 			</li>
-			<li><label>关注程度：</label>
+			<li class="first-line"><label>关注程度：</label>
 				<form:select path="concExte" class="input-medium">
 					<form:option value="" label="全部" />
 					<form:options items="${fns:getDictList('ccm_conc_exte')}" itemLabel="label" itemValue="value" htmlEscape="false"/>
 				</form:select>
 			</li>
-			<li><label>所属网格：</label>
+			<li class="first-line"><label>所属网格：</label>
 				<sys:treeselect id="area" name="area.id" value="${ccmOrgNpse.area.id}" labelName="area.name" labelValue="${ccmOrgNpse.area.name}"
 					title="区域" url="/tree/ccmTree/treeDataArea?type=7&areaid=" cssClass="input-medium" allowClear="true" notAllowSelectParent="true"/>
 			</li>
-			<li><label>是否危化企业：</label>
+			<li class="first-line"><label>是否危化企业：</label>
 				<form:select path="dangComp" class="input-medium">
 					<form:option value="" label="全部" />
 					<form:options items="${fns:getDictList('yes_no')}" itemLabel="label" itemValue="value" htmlEscape="false"/>
 				</form:select>
 			</li>
-			<li><label>风险级别：</label>
+			<li class="second-line"><label>风险级别：</label>
 				<form:select path="riskRank" class="input-medium">
 					<form:option value="" label="全部" />
 					<form:options items="${fns:getDictList('ccm_npse_risk_rank')}" itemLabel="label" itemValue="value" htmlEscape="false"/>
 				</form:select>
 			</li>
-			<li><label>登记注册开始日期：</label>
+			<li class="second-line"><label>登记注册开始日期：</label>
 				<input name="beginRegisterDate" type="text" readonly="readonly" maxlength="20" class="input-medium Wdate"
 					value="<fmt:formatDate value="${ccmOrgNpse.beginRegisterDate}" pattern="yyyy-MM-dd"/>"
 					   onclick="WdatePicker({dateFmt:'yyyy-MM-dd',isShowClear:false});"/> </li>
-				<li><label>登记注册结束日期：</label><input name="endRegisterDate" type="text" readonly="readonly" maxlength="20" class="input-medium Wdate"
+				<li class="second-line"><label>登记注册结束日期：</label><input name="endRegisterDate" type="text" readonly="readonly" maxlength="20" class="input-medium Wdate"
 					value="<fmt:formatDate value="${ccmOrgNpse.endRegisterDate}" pattern="yyyy-MM-dd"/>"
 					onclick="WdatePicker({dateFmt:'yyyy-MM-dd',isShowClear:false});" style="margin-left: 4px"/>
 			</li>
@@ -110,7 +110,7 @@
 <%--			<li class="clearfix"></li>--%>
 		</ul>
 
-	<sys:message content="${message}"/>
+
 	<div class="clearfix pull-right btn-box">
 		<a
 				onclick="parent.LayerDialog('${ctx}/org/ccmOrgNpse/formData?compType=02', '添加', '1100px', '800px')"
@@ -121,6 +121,7 @@
 
 	</div>
 	</form:form>
+	<sys:message content="${message}"/>
 	<table id="contentTable" class="table table-striped table-bordered table-condensed table-gradient">
 		<thead>
 			<tr>
